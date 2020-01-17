@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="DDA - игры, кино, железо" />
+    <title>DDA - @ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400italic,500,700" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="wrapper">
+        <header class='navbar'>
+            <div class='navbar-content container'>
+                <div class='navbar-logo'>
+                    @Html.ActionLink("DDA", "Index", "Home", null, new { @class = "logo" })
+                    <button class="toggle-btn navbar-btn" id="toggle-sidebar-btn">
+                        <div class="icon">
+                            <i class="icofont-navigation-menu"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class='navbar-search'>
+                    <form class='search-form'>
+                        <input type='text' class='search-input' placeholder='Поиск' />
+                        <button type='submit' class='search-btn' value='Найти'>
+                            <div class="icon">
+                                <i class="icofont-search"></i>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+                <div class='navbar-auth'>
+                    <button class="primary-btn navbar-btn">
+                        <div class="icon">
+                            <i class="icofont-login"></i>
+                        </div>
+                        <span class="btn-text">Вход</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class='main-layout container'>
+            <aside class='sidebar'>
+                <nav class='sidebar-nav'>
+                    <div class='sidebar-nav-menu'>
+                        <ul class='nav-list'>
+                            <li>
+                                @Html.ActionLink("Популярное", "Index", new { target = "popular" }, new { @class = "nav-item selected" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Свежее", "Index", new { target = "new" }, new { @class = "nav-item" })
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='sidebar-nav-categories'>
+                        <h4 class='sidebar-nav-heading'>Категории</h4>
+                        @* Список категорий будет получаться из бд *@
+                        <ul class='nav-list'>
+                            <li>
+                                @Html.ActionLink("Игры", "Index", new { category = "games" }, new { @class = "nav-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Кино и сериалы", "Index", new { category = "cinema" }, new { @class = "nav-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Железо", "Index", new { category = "pc-components" }, new { @class = "nav-item" })
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class='sidebar-footer'>
+
+                </div>
+            </aside>
+            @RenderBody()
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

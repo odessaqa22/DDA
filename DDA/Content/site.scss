@@ -1,0 +1,259 @@
+﻿@import 'controlls.scss';
+@import 'variables.scss';
+
+html, body {
+    min-width: 320px;
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    background-color: $background;
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+
+    i {
+        color: $dark;
+        margin: auto;
+        font-size: 22px;
+    }
+}
+
+.text-muted {
+    color: $text-muted;
+    font-size: 14px;
+}
+
+.page-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: $primary-text;
+
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.page-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: $heading-text;
+    margin: 0px;
+    padding: 4px 12px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: auto;
+    width: 100%;
+}
+
+.container {
+    max-width: 1040px;
+    margin: 0px auto;
+}
+
+.main-content-container {
+    max-width: 600px;
+    margin: 0px auto;
+    width: 100%;
+}
+
+/* Хедер страницы */
+
+$vertical-padding: 6px;
+$horizontal-padding: 16px;
+
+.navbar {
+    background: $light-blue;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    height: $navmenu-height;
+}
+
+.navbar-content {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+}
+
+.navbar-logo {
+    flex-basis: $sidebar-width;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    border-right: 1px solid $tint-color;
+}
+
+.navbar-search {
+    flex-grow: 1;
+}
+
+.navbar-auth {
+    border-left: 1px solid $tint-color;
+}
+
+.logo {
+    color: black;
+    padding: $vertical-padding $horizontal-padding;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: normal;
+    word-break: keep-all;
+}
+
+.search-form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: $vertical-padding 0px;
+    max-width: 500px;
+    margin: 0px auto;
+}
+
+/* Сайдбар */
+
+.sidebar {
+    position: relative;
+    width: $sidebar-width;
+    min-width: 200px;
+    flex: 0 0 $sidebar-width;
+    background: $light;
+    border-right: 1px solid $tint-color;
+    /*box-shadow: 0px 4px 5px $tint-color;*/
+    
+    .sidebar-nav {
+        position: sticky;
+        top: $navmenu-height;
+        display: flex;
+        flex-direction: column;
+
+        .sidebar-nav-menu {
+            margin-bottom: 24px;
+            border-bottom: 1px solid $tint-color;
+        }
+
+        .sidebar-nav-categories {
+
+            .sidebar-nav-heading {
+                font-size: 21px;
+                font-weight: 500;
+                padding-left: $horizontal-padding;
+                padding-bottom: 8px;
+                color: $dark;
+            }
+        }
+    }
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    display: inline-flex;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border-right: 4px solid transparent;
+    color: $dark;
+
+    &:not(.selected):hover {
+        background: $tint-color;
+        border-right-color: $accent-light;
+    }
+
+    &.selected {
+        color: $accent;
+        border-right-color: $accent;
+    }
+}
+
+/* Блок статьи */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0px;
+    background: $light;
+
+    .post-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+    }
+    
+    .post-content {
+        text-decoration: none;
+        color: $primary-text;
+        padding: 0px;
+
+        .post-info {
+            margin-bottom: 12px;
+
+            .post-info-heading {
+                font-size: 21px;
+                font-weight: 700;
+                margin: auto 0px;
+                padding: 4px 12px;
+            }
+
+            .post-info-text {
+                font-size: 16px;
+                margin: auto 0px;
+                padding: 12px 12px;
+            }
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .post-footer {
+        padding: 8px 12px;
+    }
+}
+

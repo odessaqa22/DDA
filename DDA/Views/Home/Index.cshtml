@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Главная";
+}
+
+<main class='main-content-container'>
+    <h1 class='page-heading'>Самое популярное</h1>
+    <div id='posts-container'>
+        <section class='post'>
+            <div class='post-header'>
+                <div>
+                    @*Категория статьи*@
+                    <a class='page-link' href="#">Игры</a>
+                    @*Автор статьи*@
+                    <a class='page-link' href="#">Владимир Семыкин</a>
+                </div>
+                @*Дата публикации статьи*@
+                <span class="text-muted">2 часа назад</span>
+            </div>
+            <a href="#" class="post-content">
+                <div class='post-info'>
+                    <h2 class="post-info-heading">
+                        «Чтение — это не весело»: история создания Disco Elysium
+                    </h2>
+                    <p class="post-info-text">
+                        Алкоголизм, продажа Ferrari, гнев и боль.
+                    </p>
+                </div>
+                <img class="post-image" src="#" />
+            </a>
+            <div class="post-footer">
+                Комментарии, лайки и прочее
+            </div>
+        </section>
+    </div>
+</main>

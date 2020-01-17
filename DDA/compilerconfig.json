@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Content/site.css",
+    "inputFile": "Content/site.scss"
+  },
+  {
+    "outputFile": "Content/variables.css",
+    "inputFile": "Content/variables.scss"
+  },
+  {
+    "outputFile": "Content/controlls.css",
+    "inputFile": "Content/controlls.scss"
+  }
+]

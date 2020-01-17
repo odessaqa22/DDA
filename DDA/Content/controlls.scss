@@ -1,0 +1,61 @@
+﻿@import "variables.scss";
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.btn-text {
+    margin-left: 4px;
+    font-size: inherit;
+}
+
+.search-input {
+    flex-grow: 1;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 8px;
+    border: 1px solid transparent;
+    outline: none;
+    background: $light;
+
+    &:focus {
+        border: 1px solid $dark;
+        background: $background;
+        z-index: 1;
+    }
+}
+
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 3px 4px;
+    margin-left: -2px;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+    background: $light;
+    color: $light;
+
+    &:hover {
+        border: 1px solid $dark;
+    }
+}
+
+.primary-btn {
+
+}
+
+.toggle-btn {
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 0px 12px;
+
+    &:hover {
+        background: $tint-color;
+    }
+}

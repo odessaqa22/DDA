@@ -15,7 +15,6 @@ namespace DDA
         protected void Application_Start()
         {
             Database.SetInitializer(new DDAInitializer());
-
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
